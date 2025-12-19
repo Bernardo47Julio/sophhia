@@ -3,1207 +3,604 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SOPHHIA | Anticipación Estratégica en Casi Tiempo Real</title>
-    <meta name="description" content="Análisis prospectivo de sistemas complejos que se actualiza al ritmo de los acontecimientos. Inteligencia viva para decisiones críticas.">
+    <title>SOPHHIA | Sistema Operativo de Prospectiva Híbrido Humano-IA</title>
+    <meta name="description" content="Análisis prospectivo de sistemas complejos. Anticipación estratégica con metodología MICMAC, MACTOR y construcción de escenarios.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:ital@0;1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --blue-primary: #1E3A5F;
-            --blue-accent: #2E86AB;
-            --blue-light: #E8F4F8;
-            --gray-light: #F5F5F5;
-            --gray-medium: #E0E0E0;
-            --gray-text: #666666;
-            --dark-text: #333333;
-            --highlight: #FFF8E1;
-            --highlight-border: #F9A825;
-            --success: #2E7D32;
-            --white: #FFFFFF;
+            --midnight: #0A0F1A;
+            --navy: #0F172A;
+            --cobalt: #1E3A5F;
+            --amber: #F59E0B;
+            --gold: #D97706;
+            --slate: #334155;
+            --silver: #94A3B8;
+            --pearl: #E2E8F0;
+            --snow: #F8FAFC;
+            --teal: #0D9488;
+            --sky: #0EA5E9;
         }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            font-size: 16px;
+            background: var(--snow);
+            color: var(--slate);
             line-height: 1.6;
-            color: var(--dark-text);
-            background: var(--white);
         }
-
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
+        
         /* Header */
-        header {
-            background: var(--white);
-            border-bottom: 1px solid var(--gray-medium);
+        .header {
+            background: var(--midnight);
             padding: 16px 0;
             position: sticky;
             top: 0;
             z-index: 100;
         }
-
-        .header-content {
+        
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-
+        
         .logo {
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--blue-primary);
-            text-decoration: none;
-            letter-spacing: -0.5px;
-        }
-
-        .logo span {
-            color: var(--blue-accent);
-        }
-
-        .header-cta {
-            background: var(--blue-accent);
-            color: var(--white);
-            padding: 10px 20px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 14px;
-            transition: background 0.2s;
-        }
-
-        .header-cta:hover {
-            background: var(--blue-primary);
-        }
-
-        /* Hero Section */
-        .hero {
-            padding: 80px 0 60px;
-            background: linear-gradient(180deg, var(--white) 0%, var(--gray-light) 100%);
-        }
-
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .hero-badge {
-            display: inline-block;
-            background: var(--blue-light);
-            color: var(--blue-accent);
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 13px;
-            font-weight: 500;
-            margin-bottom: 24px;
-        }
-
-        .hero h1 {
-            font-size: clamp(32px, 5vw, 48px);
-            font-weight: 700;
-            color: var(--blue-primary);
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-
-        .hero-subtitle {
-            font-size: 18px;
-            color: var(--gray-text);
-            margin-bottom: 32px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .hero-cta {
-            display: inline-block;
-            background: var(--blue-accent);
-            color: var(--white);
-            padding: 14px 32px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 16px;
-            transition: all 0.2s;
-            box-shadow: 0 4px 14px rgba(46, 134, 171, 0.3);
-        }
-
-        .hero-cta:hover {
-            background: var(--blue-primary);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(30, 58, 95, 0.3);
-        }
-
-        .hero-case {
-            margin-top: 40px;
-            padding: 16px 24px;
-            background: var(--white);
-            border: 1px solid var(--gray-medium);
-            border-radius: 8px;
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .hero-case-icon {
-            font-size: 24px;
-        }
-
-        .hero-case-text {
-            text-align: left;
-        }
-
-        .hero-case-label {
-            font-size: 12px;
-            color: var(--gray-text);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .hero-case-title {
-            font-weight: 600;
-            color: var(--blue-primary);
-        }
-
-        .hero-case-date {
-            font-size: 13px;
-            color: var(--success);
-        }
-
-        /* Section base */
-        section {
-            padding: 80px 0;
-        }
-
-        section:nth-child(even) {
-            background: var(--gray-light);
-        }
-
-        .section-title {
-            font-size: clamp(24px, 4vw, 32px);
-            font-weight: 700;
-            color: var(--blue-primary);
-            margin-bottom: 16px;
-        }
-
-        .section-subtitle {
-            font-size: 18px;
-            color: var(--gray-text);
-            margin-bottom: 40px;
-            max-width: 600px;
-        }
-
-        /* Problem Section */
-        .problem-highlight {
-            background: var(--highlight);
-            border-left: 4px solid var(--highlight-border);
-            padding: 20px 24px;
-            margin: 32px 0;
-            border-radius: 0 8px 8px 0;
-        }
-
-        .problem-highlight p {
-            font-family: 'Merriweather', serif;
-            font-style: italic;
-            color: var(--dark-text);
-            font-size: 17px;
-        }
-
-        .problem-list {
-            list-style: none;
-            margin: 24px 0;
-        }
-
-        .problem-list li {
-            padding: 12px 0 12px 32px;
-            position: relative;
-            border-bottom: 1px solid var(--gray-medium);
-        }
-
-        .problem-list li:before {
-            content: "?";
-            position: absolute;
-            left: 0;
-            color: var(--blue-accent);
-            font-weight: 700;
-            font-size: 18px;
-        }
-
-        /* Solution Section */
-        .solution-definition {
-            background: var(--white);
-            border: 1px solid var(--gray-medium);
-            border-radius: 12px;
-            padding: 32px;
-            margin-bottom: 40px;
-        }
-
-        .solution-name {
-            font-size: 14px;
-            color: var(--blue-accent);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 8px;
-        }
-
-        .solution-full-name {
-            font-size: 20px;
-            color: var(--blue-primary);
-            font-weight: 600;
-            margin-bottom: 16px;
-        }
-
-        .solution-desc {
-            font-size: 17px;
-            color: var(--dark-text);
-            margin-bottom: 24px;
-        }
-
-        .solution-features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 16px;
-        }
-
-        .solution-feature {
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-        }
-
-        .solution-feature-icon {
-            width: 24px;
-            height: 24px;
-            background: var(--blue-light);
-            border-radius: 50%;
             display: flex;
             align-items: center;
-            justify-content: center;
-            color: var(--blue-accent);
-            font-size: 14px;
-            flex-shrink: 0;
-        }
-
-        .solution-feature strong {
-            color: var(--blue-primary);
-        }
-
-        /* Comparison Table */
-        .comparison-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 32px;
-            background: var(--white);
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-        }
-
-        .comparison-table th,
-        .comparison-table td {
-            padding: 16px 20px;
-            text-align: center;
-            border-bottom: 1px solid var(--gray-medium);
-        }
-
-        .comparison-table th {
-            font-weight: 600;
-            font-size: 14px;
-        }
-
-        .comparison-table th:nth-child(1) {
-            background: #FFCDD2;
-            color: #C62828;
-        }
-
-        .comparison-table th:nth-child(2) {
-            background: #FFE0B2;
-            color: #E65100;
-        }
-
-        .comparison-table th:nth-child(3) {
-            background: #C8E6C9;
-            color: var(--success);
-        }
-
-        .comparison-table td:nth-child(3) {
-            font-weight: 600;
-            color: var(--blue-primary);
-        }
-
-        .comparison-table tr:last-child td {
-            border-bottom: none;
-        }
-
-        /* Methodology Section */
-        .methodology-flow {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 16px;
-            margin: 40px 0;
-        }
-
-        .methodology-row {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 16px;
-            width: 100%;
-        }
-
-        .methodology-box {
-            background: var(--white);
-            border: 2px solid var(--blue-primary);
-            border-radius: 8px;
-            padding: 20px 28px;
-            text-align: center;
-            min-width: 160px;
-        }
-
-        .methodology-box-title {
-            font-weight: 700;
-            color: var(--blue-primary);
-            font-size: 16px;
-            margin-bottom: 4px;
-        }
-
-        .methodology-box-desc {
-            font-size: 13px;
-            color: var(--gray-text);
-        }
-
-        .methodology-arrow {
-            font-size: 28px;
-            color: var(--blue-accent);
-        }
-
-        .methodology-highlight {
-            background: var(--blue-accent);
-            border-color: var(--blue-accent);
-        }
-
-        .methodology-highlight .methodology-box-title,
-        .methodology-highlight .methodology-box-desc {
-            color: var(--white);
-        }
-
-        .methodology-ctr {
-            background: var(--success);
-            border-color: var(--success);
-        }
-
-        .methodology-ctr .methodology-box-title,
-        .methodology-ctr .methodology-box-desc {
-            color: var(--white);
-        }
-
-        .methodology-note {
-            text-align: center;
-            font-size: 15px;
-            color: var(--gray-text);
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        /* Case Study Section */
-        .case-study {
-            background: var(--white);
-            border: 1px solid var(--gray-medium);
-            border-radius: 12px;
-            overflow: hidden;
-        }
-
-        .case-study-header {
-            background: var(--blue-primary);
-            color: var(--white);
-            padding: 24px 32px;
-        }
-
-        .case-study-label {
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            opacity: 0.8;
-            margin-bottom: 8px;
-        }
-
-        .case-study-title {
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 4px;
-        }
-
-        .case-study-date {
-            font-size: 14px;
-            opacity: 0.9;
-        }
-
-        .case-study-body {
-            padding: 32px;
-        }
-
-        .case-study-findings {
-            margin-bottom: 24px;
-        }
-
-        .case-study-findings h4 {
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            color: var(--gray-text);
-            margin-bottom: 16px;
-        }
-
-        .finding {
-            display: flex;
-            gap: 12px;
-            padding: 12px 0;
-            border-bottom: 1px solid var(--gray-light);
-        }
-
-        .finding:last-child {
-            border-bottom: none;
-        }
-
-        .finding-label {
-            font-weight: 600;
-            color: var(--blue-primary);
-            min-width: 180px;
-        }
-
-        .case-study-cta {
-            display: inline-block;
-            background: var(--blue-accent);
-            color: var(--white);
-            padding: 14px 28px;
-            border-radius: 8px;
+            gap: 8px;
             text-decoration: none;
-            font-weight: 600;
-            transition: background 0.2s;
         }
-
-        .case-study-cta:hover {
-            background: var(--blue-primary);
-        }
-
-        .case-study-note {
-            margin-top: 20px;
-            padding: 16px;
-            background: var(--highlight);
-            border-radius: 8px;
-            font-size: 14px;
-            color: var(--dark-text);
-            font-style: italic;
-        }
-
-        /* Applications Section */
-        .applications-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .application-card {
-            background: var(--white);
-            border: 1px solid var(--gray-medium);
-            border-radius: 10px;
-            padding: 24px;
+        
+        .logo-symbol { color: var(--amber); font-size: 24px; }
+        .logo-text { color: white; font-size: 20px; font-weight: 700; letter-spacing: 2px; }
+        
+        .nav-links {
             display: flex;
-            align-items: flex-start;
-            gap: 16px;
-            transition: box-shadow 0.2s;
-        }
-
-        .application-card:hover {
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-        }
-
-        .application-icon {
-            font-size: 32px;
-            line-height: 1;
-        }
-
-        .application-content h4 {
-            font-size: 16px;
-            font-weight: 600;
-            color: var(--blue-primary);
-            margin-bottom: 4px;
-        }
-
-        .application-content p {
-            font-size: 14px;
-            color: var(--gray-text);
-        }
-
-        /* Founder Section */
-        .founder {
-            display: flex;
-            flex-direction: column;
-            gap: 32px;
-        }
-
-        @media (min-width: 768px) {
-            .founder {
-                flex-direction: row;
-                align-items: flex-start;
-            }
-        }
-
-        .founder-photo {
-            width: 200px;
-            height: 200px;
-            background: var(--blue-light);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-
-        .founder-photo-placeholder {
-            font-size: 64px;
-            color: var(--blue-accent);
-        }
-
-        .founder-info {
-            flex: 1;
-        }
-
-        .founder-name {
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--blue-primary);
-            margin-bottom: 4px;
-        }
-
-        .founder-title {
-            font-size: 16px;
-            color: var(--blue-accent);
-            font-weight: 500;
-            margin-bottom: 20px;
-        }
-
-        .founder-career {
-            list-style: none;
-            margin-bottom: 24px;
-        }
-
-        .founder-career li {
-            padding: 8px 0;
-            border-bottom: 1px solid var(--gray-light);
-            font-size: 14px;
-            display: flex;
-            gap: 12px;
-        }
-
-        .founder-career li:last-child {
-            border-bottom: none;
-        }
-
-        .career-year {
-            color: var(--blue-accent);
-            font-weight: 600;
-            min-width: 50px;
-        }
-
-        .career-highlight {
-            background: var(--blue-light);
-            padding: 6px 8px;
-            border-radius: 4px;
-            margin: -6px 0;
-        }
-
-        .founder-quote {
-            background: var(--gray-light);
-            padding: 20px;
-            border-radius: 8px;
-            border-left: 4px solid var(--blue-accent);
-        }
-
-        .founder-quote p {
-            font-family: 'Merriweather', serif;
-            font-style: italic;
-            color: var(--dark-text);
-        }
-
-        /* Contact Section */
-        .contact-section {
-            background: var(--blue-primary);
-            color: var(--white);
-        }
-
-        .contact-section .section-title {
-            color: var(--white);
-        }
-
-        .contact-section .section-subtitle {
-            color: rgba(255,255,255,0.8);
-        }
-
-        .contact-form {
-            max-width: 500px;
-            background: var(--white);
-            padding: 32px;
-            border-radius: 12px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.2);
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            font-size: 14px;
-            font-weight: 500;
-            color: var(--dark-text);
-            margin-bottom: 6px;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px 14px;
-            border: 1px solid var(--gray-medium);
-            border-radius: 6px;
-            font-size: 15px;
-            font-family: inherit;
-            transition: border-color 0.2s;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--blue-accent);
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 100px;
-        }
-
-        .form-submit {
-            width: 100%;
-            background: var(--blue-accent);
-            color: var(--white);
-            border: none;
-            padding: 14px 24px;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-
-        .form-submit:hover {
-            background: var(--blue-primary);
-        }
-
-        .contact-alt {
-            margin-top: 20px;
-            text-align: center;
-            font-size: 14px;
-            color: var(--gray-text);
-        }
-
-        .contact-alt a {
-            color: var(--blue-accent);
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--dark-text);
-            color: rgba(255,255,255,0.7);
-            padding: 40px 0;
-            text-align: center;
-        }
-
-        .footer-logo {
-            font-size: 20px;
-            font-weight: 700;
-            color: var(--white);
-            margin-bottom: 8px;
-        }
-
-        .footer-logo span {
-            color: var(--blue-accent);
-        }
-
-        .footer-tagline {
-            font-size: 13px;
-            margin-bottom: 20px;
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
             gap: 24px;
-            margin-bottom: 20px;
         }
-
-        .footer-links a {
-            color: rgba(255,255,255,0.7);
+        
+        .nav-link {
+            color: var(--pearl);
             text-decoration: none;
             font-size: 14px;
             transition: color 0.2s;
         }
-
-        .footer-links a:hover {
-            color: var(--white);
+        .nav-link:hover { color: var(--amber); }
+        
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--midnight) 100%);
+            padding: 100px 24px;
+            color: white;
+            text-align: center;
         }
-
-        .footer-copy {
+        
+        .hero-inner {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .hero-symbol {
+            font-size: 48px;
+            color: var(--amber);
+            margin-bottom: 24px;
+        }
+        
+        .hero h1 {
+            font-size: clamp(36px, 6vw, 56px);
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: -1px;
+        }
+        
+        .hero-tagline {
+            font-size: 20px;
+            color: var(--amber);
+            margin-bottom: 24px;
+            font-weight: 500;
+        }
+        
+        .hero-subtitle {
+            font-size: 18px;
+            color: var(--pearl);
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+        
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--amber);
+            color: var(--midnight);
+            padding: 16px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .hero-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(245, 158, 11, 0.4);
+        }
+        
+        /* Casos Section */
+        .casos-section {
+            padding: 80px 24px;
+            background: white;
+        }
+        
+        .section-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+        
+        .section-tag {
+            color: var(--amber);
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+        
+        .section-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 16px;
+        }
+        
+        .section-subtitle {
+            font-size: 18px;
+            color: var(--slate);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Cases Grid */
+        .cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 24px;
+        }
+        
+        .case-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border: 1px solid var(--pearl);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .case-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        }
+        
+        .case-header {
+            padding: 24px;
+            color: white;
+        }
+        
+        .case-header.geopolitica { background: linear-gradient(135deg, #DC2626 0%, #991B1B 100%); }
+        .case-header.energia { background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%); }
+        .case-header.infraestructura { background: linear-gradient(135deg, #0EA5E9 0%, #0284C7 100%); }
+        
+        .case-category {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            opacity: 0.9;
+            margin-bottom: 8px;
+        }
+        
+        .case-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        
+        .case-date {
             font-size: 13px;
+            opacity: 0.8;
         }
-
+        
+        .case-body {
+            padding: 24px;
+        }
+        
+        .case-desc {
+            font-size: 14px;
+            color: var(--slate);
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+        
+        .case-stats {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+        
+        .case-stat {
+            text-align: center;
+            flex: 1;
+            padding: 12px;
+            background: var(--snow);
+            border-radius: 8px;
+        }
+        
+        .stat-value {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--navy);
+        }
+        
+        .stat-label {
+            font-size: 11px;
+            color: var(--silver);
+            text-transform: uppercase;
+        }
+        
+        .case-links {
+            display: flex;
+            gap: 12px;
+        }
+        
+        .case-link {
+            flex: 1;
+            text-align: center;
+            padding: 12px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+        
+        .case-link.primary {
+            background: var(--navy);
+            color: white;
+        }
+        
+        .case-link.primary:hover {
+            background: var(--cobalt);
+        }
+        
+        .case-link.secondary {
+            background: var(--pearl);
+            color: var(--navy);
+        }
+        
+        .case-link.secondary:hover {
+            background: var(--silver);
+            color: white;
+        }
+        
+        /* Metodología Section */
+        .metodologia-section {
+            padding: 80px 24px;
+            background: var(--snow);
+        }
+        
+        .metodologia-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+        }
+        
+        .metodologia-card {
+            background: white;
+            border-radius: 12px;
+            padding: 28px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+        
+        .metodologia-icon {
+            font-size: 40px;
+            margin-bottom: 16px;
+        }
+        
+        .metodologia-name {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 8px;
+        }
+        
+        .metodologia-desc {
+            font-size: 14px;
+            color: var(--slate);
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 24px;
+            background: linear-gradient(135deg, var(--midnight) 0%, var(--navy) 100%);
+            text-align: center;
+            color: white;
+        }
+        
+        .cta-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+        
+        .cta-subtitle {
+            font-size: 18px;
+            color: var(--pearl);
+            max-width: 600px;
+            margin: 0 auto 32px;
+        }
+        
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--amber);
+            color: var(--midnight);
+            padding: 16px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--midnight);
+            padding: 40px 24px;
+            text-align: center;
+            color: var(--silver);
+        }
+        
+        .footer-brand {
+            color: white;
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+        
+        .footer-tagline {
+            font-size: 13px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-copy {
+            font-size: 12px;
+            color: var(--slate);
+        }
+        
         /* Responsive */
         @media (max-width: 768px) {
-            section {
-                padding: 60px 0;
-            }
-
-            .hero {
-                padding: 60px 0 40px;
-            }
-
-            .methodology-row {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .methodology-arrow {
-                transform: rotate(90deg);
-            }
-
-            .finding {
-                flex-direction: column;
-                gap: 4px;
-            }
-
-            .finding-label {
-                min-width: auto;
-            }
-
-            .comparison-table {
-                font-size: 14px;
-            }
-
-            .comparison-table th,
-            .comparison-table td {
-                padding: 12px 10px;
-            }
+            .nav-links { display: none; }
+            .cases-grid { grid-template-columns: 1fr; }
+            .case-stats { flex-wrap: wrap; }
         }
     </style>
 </head>
 <body>
 
     <!-- Header -->
-    <header>
-        <div class="container header-content">
-            <a href="#" class="logo">SOPHH<span>IA</span></a>
-            <a href="#contacto" class="header-cta">Solicitar Análisis</a>
+    <header class="header">
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <span class="logo-symbol">◈</span>
+                <span class="logo-text">SOPHHIA</span>
+            </a>
+            <nav class="nav-links">
+                <a href="#casos" class="nav-link">Casos</a>
+                <a href="#metodologia" class="nav-link">Metodología</a>
+                <a href="#contacto" class="nav-link">Contacto</a>
+            </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero -->
     <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <span class="hero-badge">Sistema de Prospectiva Híbrido Humano-IA</span>
-                <h1>Anticipación Estratégica en Casi Tiempo Real</h1>
-                <p class="hero-subtitle">
-                    Análisis prospectivo de sistemas complejos que se actualiza al ritmo de los acontecimientos. 
-                    No informes estáticos que caducan en semanas — inteligencia viva para decisiones críticas.
+        <div class="hero-inner">
+            <div class="hero-symbol">◈</div>
+            <h1>SOPHHIA</h1>
+            <p class="hero-tagline">Sistema Operativo de Prospectiva Híbrido Humano-IA</p>
+            <p class="hero-subtitle">
+                Análisis prospectivo de sistemas complejos que combina la capacidad analítica 
+                de la Inteligencia Artificial con el juicio estratégico de paneles de expertos.
+            </p>
+            <a href="#casos" class="hero-cta">
+                <span>Ver Casos Base Cero</span>
+                <span>→</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Casos Section -->
+    <section class="casos-section" id="casos">
+        <div class="section-inner">
+            <div class="section-header">
+                <p class="section-tag">Casos Base Cero</p>
+                <h2 class="section-title">Análisis Demostrativos</h2>
+                <p class="section-subtitle">
+                    Ejemplos de aplicación generados por SOPHHIA. 
+                    Cuando se contratan, se activan Mesas de Expertos para validación completa.
                 </p>
-                <a href="#contacto" class="hero-cta">Solicitar Análisis</a>
-                
-                <div class="hero-case">
-                    <span class="hero-case-icon">📄</span>
-                    <div class="hero-case-text">
-                        <div class="hero-case-label">Casos disponibles</div>
-                        <div class="hero-case-title">Ucrania · REE/Redeia</div>
-                        <div class="hero-case-date">✓ Actualizados 19 dic 2025</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Problem Section -->
-    <section id="problema">
-        <div class="container">
-            <h2 class="section-title">El problema no es falta de información. Es falta de sentido.</h2>
-            <p class="section-subtitle">
-                Su organización tiene acceso a más datos que nunca. Pero cuando necesita anticipar:
-            </p>
-            
-            <ul class="problem-list">
-                <li>¿Cómo afectará la geopolítica a su cadena de suministro?</li>
-                <li>¿Qué escenarios regulatorios debe preparar?</li>
-                <li>¿Hacia dónde se mueve su sector en los próximos 5 años?</li>
-            </ul>
-            
-            <p style="color: var(--gray-text); margin-bottom: 24px;">
-                ...recibe informes de consultoría que quedan obsoletos antes de implementarse.
-            </p>
-            
-            <div class="problem-highlight">
-                <p>En las negociaciones de Ucrania, las probabilidades de cada escenario cambiaron 3 veces en 72 horas.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Solution Section -->
-    <section id="solucion">
-        <div class="container">
-            <h2 class="section-title">La solución: un sistema vivo</h2>
-            
-            <div class="solution-definition">
-                <div class="solution-name">SOPHHIA</div>
-                <div class="solution-full-name">Sistema Operativo de Prospectiva Híbrido Humano-IA</div>
-                <p class="solution-desc">
-                    No es un chatbot que opina. Es un arquitecto de sistemas que combina rigor metodológico 
-                    con velocidad de actualización.
-                </p>
-                
-                <div class="solution-features">
-                    <div class="solution-feature">
-                        <div class="solution-feature-icon">✓</div>
-                        <div><strong>Mapea actores</strong> y sus funciones objetivo reales</div>
-                    </div>
-                    <div class="solution-feature">
-                        <div class="solution-feature-icon">✓</div>
-                        <div><strong>Identifica escenarios</strong> con probabilidades calculadas</div>
-                    </div>
-                    <div class="solution-feature">
-                        <div class="solution-feature-icon">✓</div>
-                        <div><strong>Detecta variables críticas</strong> que determinarán el futuro</div>
-                    </div>
-                    <div class="solution-feature">
-                        <div class="solution-feature-icon">✓</div>
-                        <div><strong>Se actualiza</strong> cuando cambia el sistema</div>
-                    </div>
-                </div>
             </div>
             
-            <table class="comparison-table">
-                <thead>
-                    <tr>
-                        <th>Consultoría tradicional</th>
-                        <th>IA genérica</th>
-                        <th>SOPHHIA</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Informe estático</td>
-                        <td>Respuestas puntuales</td>
-                        <td>Sistema vivo</td>
-                    </tr>
-                    <tr>
-                        <td>Caduca en semanas</td>
-                        <td>Sin metodología</td>
-                        <td>Rigor + velocidad</td>
-                    </tr>
-                    <tr>
-                        <td>Caro y lento</td>
-                        <td>Superficial</td>
-                        <td>Actualización CTR</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </section>
-
-    <!-- Methodology Section -->
-    <section id="metodologia">
-        <div class="container">
-            <h2 class="section-title">Metodología: rigor científico, no opiniones</h2>
-            
-            <div class="methodology-flow">
-                <div class="methodology-row">
-                    <div class="methodology-box">
-                        <div class="methodology-box-title">MICMAC</div>
-                        <div class="methodology-box-desc">Análisis estructural</div>
-                    </div>
-                    <span class="methodology-arrow">→</span>
-                    <div class="methodology-box">
-                        <div class="methodology-box-title">MACTOR</div>
-                        <div class="methodology-box-desc">Análisis de actores</div>
-                    </div>
-                    <span class="methodology-arrow">→</span>
-                    <div class="methodology-box">
-                        <div class="methodology-box-title">ESCENARIOS</div>
-                        <div class="methodology-box-desc">Construcción de futuros</div>
-                    </div>
-                </div>
-                
-                <span class="methodology-arrow" style="transform: rotate(90deg);">→</span>
-                
-                <div class="methodology-box methodology-highlight">
-                    <div class="methodology-box-title">BUCLES DE RETROALIMENTACIÓN</div>
-                    <div class="methodology-box-desc">Actualización con nuevos datos</div>
-                </div>
-                
-                <span class="methodology-arrow" style="transform: rotate(90deg);">→</span>
-                
-                <div class="methodology-box methodology-ctr">
-                    <div class="methodology-box-title">CASI TIEMPO REAL</div>
-                    <div class="methodology-box-desc">Iteración al ritmo de eventos</div>
-                </div>
-            </div>
-            
-            <p class="methodology-note">
-                SOPHHIA integra metodologías de prospectiva validadas académicamente con capacidades de IA 
-                para búsqueda, síntesis y actualización continua.
-            </p>
-        </div>
-    </section>
-
-    <!-- Case Study Section -->
-    <section id="casos">
-        <div class="container">
-            <h2 class="section-title">Casos de demostración</h2>
-            <p class="section-subtitle">Esto es lo que SOPHHIA produce.</p>
-            
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 24px;">
+            <div class="cases-grid">
                 
                 <!-- Caso Ucrania -->
-                <div class="case-study">
-                    <div class="case-study-header">
-                        <div class="case-study-label">🌍 Geopolítica</div>
-                        <h3 class="case-study-title">Guerra de Ucrania</h3>
-                        <div class="case-study-date">Actualizado 18 dic 2025</div>
+                <div class="case-card">
+                    <div class="case-header geopolitica">
+                        <div class="case-category">🌍 Geopolítica</div>
+                        <h3 class="case-title">Guerra de Ucrania</h3>
+                        <div class="case-date">Actualizado Dic 2025</div>
                     </div>
-                    <div class="case-study-body">
-                        <div class="case-study-findings">
-                            <div class="finding">
-                                <span class="finding-label">Escenario más probable</span>
-                                <span>Acuerdo parcial — conflicto congelado</span>
+                    <div class="case-body">
+                        <p class="case-desc">
+                            Análisis de escenarios de resolución del conflicto. 
+                            Actores nacionales vs. transnacionales. Implicaciones para Europa y España.
+                        </p>
+                        <div class="case-stats">
+                            <div class="case-stat">
+                                <div class="stat-value">4</div>
+                                <div class="stat-label">Escenarios</div>
                             </div>
-                            <div class="finding">
-                                <span class="finding-label">Variable crítica</span>
-                                <span>Territorio del Donbas</span>
+                            <div class="case-stat">
+                                <div class="stat-value">12</div>
+                                <div class="stat-label">Actores</div>
+                            </div>
+                            <div class="case-stat">
+                                <div class="stat-value">2030</div>
+                                <div class="stat-label">Horizonte</div>
                             </div>
                         </div>
-                        <a href="SOPHHIA_Caso_Ucrania.pdf" class="case-study-cta" download>
-                            Descargar PDF
-                        </a>
+                        <div class="case-links">
+                            <a href="SOPHHIA_Caso_Ucrania.pdf" class="case-link primary">📄 Ver PDF</a>
+                        </div>
                     </div>
                 </div>
-
+                
                 <!-- Caso REE -->
-                <div class="case-study">
-                    <div class="case-study-header" style="background: linear-gradient(135deg, #2c5282 0%, #1E3A5F 100%);">
-                        <div class="case-study-label">⚡ Energía</div>
-                        <h3 class="case-study-title">REE/Redeia Post-Apagón</h3>
-                        <div class="case-study-date">Actualizado 19 dic 2025</div>
+                <div class="case-card">
+                    <div class="case-header energia">
+                        <div class="case-category">⚡ Energía</div>
+                        <h3 class="case-title">REE / Redeia</h3>
+                        <div class="case-date">Actualizado Dic 2025</div>
                     </div>
-                    <div class="case-study-body">
-                        <div class="case-study-findings">
-                            <div class="finding">
-                                <span class="finding-label">Escenario objetivo</span>
-                                <span>Travesía en Turbulencia (35%)</span>
+                    <div class="case-body">
+                        <p class="case-desc">
+                            Análisis prospectivo del sector eléctrico español post-apagón abril 2025. 
+                            Escenarios regulatorios y estratégicos para Red Eléctrica.
+                        </p>
+                        <div class="case-stats">
+                            <div class="case-stat">
+                                <div class="stat-value">4</div>
+                                <div class="stat-label">Escenarios</div>
                             </div>
-                            <div class="finding">
-                                <span class="finding-label">Bifurcación crítica</span>
-                                <span>Informe CNMC Q1 2026</span>
+                            <div class="case-stat">
+                                <div class="stat-value">15</div>
+                                <div class="stat-label">Variables</div>
+                            </div>
+                            <div class="case-stat">
+                                <div class="stat-value">2030</div>
+                                <div class="stat-label">Horizonte</div>
                             </div>
                         </div>
-                        <a href="caso-ree.html" class="case-study-cta">
-                            Ver caso completo
-                        </a>
-                    </div>
-                </div>
-
-            </div>
-            
-            <div class="case-study-note" style="margin-top: 24px;">
-                Estos documentos son instantáneas. En sistemas de alta volatilidad, 
-                el valor está en la capacidad de actualización continua.
-            </div>
-        </div>
-    </section>
-
-    <!-- Applications Section -->
-    <section id="aplicaciones">
-        <div class="container">
-            <h2 class="section-title">¿Dónde aplica el análisis prospectivo en Casi Tiempo Real?</h2>
-            
-            <div class="applications-grid">
-                <div class="application-card">
-                    <span class="application-icon">🌍</span>
-                    <div class="application-content">
-                        <h4>Geopolítica</h4>
-                        <p>Impacto de conflictos en operaciones y mercados</p>
+                        <div class="case-links">
+                            <a href="caso-ree.html" class="case-link primary">🔍 Ver Caso</a>
+                            <a href="SOPHHIA_REE_Fase1B_2_Completo.pdf" class="case-link secondary">📄 PDF</a>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="application-card">
-                    <span class="application-icon">⚡</span>
-                    <div class="application-content">
-                        <h4>Energía</h4>
-                        <p>Escenarios de transición y precios</p>
+                <!-- Caso Aeropuerto BCN -->
+                <div class="case-card">
+                    <div class="case-header infraestructura">
+                        <div class="case-category">✈️ Infraestructuras</div>
+                        <h3 class="case-title">Aeropuerto Barcelona-El Prat</h3>
+                        <div class="case-date">Actualizado Dic 2025</div>
+                    </div>
+                    <div class="case-body">
+                        <p class="case-desc">
+                            Análisis de la ampliación del aeropuerto. Variable motriz: Dictamen UE 
+                            sobre Red Natura 2000. Escenarios de inversión y gobernanza.
+                        </p>
+                        <div class="case-stats">
+                            <div class="case-stat">
+                                <div class="stat-value">3.2B€</div>
+                                <div class="stat-label">Inversión</div>
+                            </div>
+                            <div class="case-stat">
+                                <div class="stat-value">16</div>
+                                <div class="stat-label">Actores</div>
+                            </div>
+                            <div class="case-stat">
+                                <div class="stat-value">2033</div>
+                                <div class="stat-label">Horizonte</div>
+                            </div>
+                        </div>
+                        <div class="case-links">
+                            <a href="caso-aeropuerto-bcn.html" class="case-link primary">🔍 Ver Caso</a>
+                            <a href="SOPHHIA_BCN_Integral_Fases_1_7_v3.pdf" class="case-link secondary">📄 PDF</a>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="application-card">
-                    <span class="application-icon">📜</span>
-                    <div class="application-content">
-                        <h4>Regulación</h4>
-                        <p>Anticipación de cambios normativos</p>
-                    </div>
-                </div>
-                
-                <div class="application-card">
-                    <span class="application-icon">🏭</span>
-                    <div class="application-content">
-                        <h4>Sectores</h4>
-                        <p>Dinámicas competitivas y disrupciones</p>
-                    </div>
-                </div>
-                
-                <div class="application-card">
-                    <span class="application-icon">🏛️</span>
-                    <div class="application-content">
-                        <h4>Territorio</h4>
-                        <p>Planificación estratégica regional</p>
-                    </div>
-                </div>
-                
-                <div class="application-card">
-                    <span class="application-icon">💹</span>
-                    <div class="application-content">
-                        <h4>Mercados</h4>
-                        <p>Variables macro que afectan inversiones</p>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- Founder Section -->
-    <section id="fundador">
-        <div class="container">
-            <h2 class="section-title">Más de 50 años construyendo estrategia</h2>
-            
-            <div class="founder">
-                <div class="founder-photo">
-                    <span class="founder-photo-placeholder">👤</span>
-                </div>
-                
-                <div class="founder-info">
-                    <h3 class="founder-name">Julio Villacorta Garcia</h3>
-                    <p class="founder-title">Ingeniero Industrial</p>
-                    
-                    <ul class="founder-career">
-                        <li>
-                            <span class="career-year">1972</span>
-                            <span>Gabinete Técnico UPB</span>
-                        </li>
-                        <li>
-                            <span class="career-year">1974</span>
-                            <span>Ingeniero Consultor, Gabinete Delfos</span>
-                        </li>
-                        <li>
-                            <span class="career-year">1983</span>
-                            <span class="career-highlight"><strong>Jefe Servicio Activación CC.NN. Ascó I y II</strong>, HECSA</span>
-                        </li>
-                        <li>
-                            <span class="career-year">1986</span>
-                            <span class="career-highlight"><strong>Director Organización y Personal, RED ELÉCTRICA DE ESPAÑA</strong></span>
-                        </li>
-                        <li>
-                            <span class="career-year">1990</span>
-                            <span class="career-highlight"><strong>Miembro Comité Ejecutivo, Plan Estratégico Barcelona 2000</strong></span>
-                        </li>
-                        <li>
-                            <span class="career-year">1992</span>
-                            <span class="career-highlight"><strong>Miembro Consejo Administración, Barcelona Activa</strong></span>
-                        </li>
-                        <li>
-                            <span class="career-year">2003</span>
-                            <span>Socio Senior, ENGINNOVA CONSULTORES</span>
-                        </li>
-                        <li>
-                            <span class="career-year">Hoy</span>
-                            <span>Consultor de Inteligencia, Prospectiva y Estrategia · Investigador doctoral IA</span>
-                        </li>
-                    </ul>
-                    
-                    <div class="founder-quote">
-                        <p>"SOPHHIA nace de una convicción: la anticipación estratégica no puede ser un informe 
-                        que se guarda en un cajón. Tiene que ser un sistema vivo que evoluciona con la realidad."</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contacto" class="contact-section">
-        <div class="container">
-            <h2 class="section-title">¿Necesita anticipar el futuro de un sistema que afecta a su organización?</h2>
-            <p class="section-subtitle">
-                Cuéntenos qué sistema quiere analizar. Le responderemos en 48 horas con una evaluación de viabilidad.
-            </p>
-            
-            <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-                <div class="form-group">
-                    <label for="nombre">Nombre</label>
-                    <input type="text" id="nombre" name="nombre" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="organizacion">Organización</label>
-                    <input type="text" id="organizacion" name="organizacion">
-                </div>
-                
-                <div class="form-group">
-                    <label for="sistema">Sistema o tema de interés</label>
-                    <textarea id="sistema" name="sistema" placeholder="¿Qué sistema complejo necesita analizar? ¿Qué decisiones dependen de este análisis?"></textarea>
-                </div>
-                
-                <button type="submit" class="form-submit">Solicitar evaluación</button>
-                
-                <p class="contact-alt">
-                    ¿Prefiere una conversación directa? → <a href="mailto:contacto@sophhia.com">contacto@sophhia.com</a>
+    <!-- Metodología Section -->
+    <section class="metodologia-section" id="metodologia">
+        <div class="section-inner">
+            <div class="section-header">
+                <p class="section-tag">Metodología</p>
+                <h2 class="section-title">Las 7 Fases del Sistema</h2>
+                <p class="section-subtitle">
+                    Análisis prospectivo estructurado con técnicas validadas internacionalmente.
                 </p>
-            </form>
+            </div>
+            
+            <div class="metodologia-grid">
+                <div class="metodologia-card">
+                    <div class="metodologia-icon">🎯</div>
+                    <h3 class="metodologia-name">MICMAC</h3>
+                    <p class="metodologia-desc">Análisis estructural de variables. Identifica palancas de cambio del sistema.</p>
+                </div>
+                <div class="metodologia-card">
+                    <div class="metodologia-icon">👥</div>
+                    <h3 class="metodologia-name">MACTOR</h3>
+                    <p class="metodologia-desc">Juego de actores. Mapea poder, posiciones y estrategias.</p>
+                </div>
+                <div class="metodologia-card">
+                    <div class="metodologia-icon">🔮</div>
+                    <h3 class="metodologia-name">Escenarios</h3>
+                    <p class="metodologia-desc">Construcción de futuros plausibles con probabilidades estimadas.</p>
+                </div>
+                <div class="metodologia-card">
+                    <div class="metodologia-icon">🛡️</div>
+                    <h3 class="metodologia-name">Robustez</h3>
+                    <p class="metodologia-desc">Test de estrategias contra múltiples escenarios. Contingencias Si/Entonces.</p>
+                </div>
+            </div>
         </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="contacto">
+        <h2 class="cta-title">¿Listo para navegar el futuro?</h2>
+        <p class="cta-subtitle">
+            Solicita un Caso Base Cero para tu organización. 
+            Sin compromiso. Demuestra la capacidad del sistema.
+        </p>
+        <a href="mailto:contacto@sophhia.com" class="cta-button">
+            <span>Solicitar Análisis</span>
+            <span>→</span>
+        </a>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-logo">SOPHH<span>IA</span></div>
-            <p class="footer-tagline">Sistema Operativo de Prospectiva Híbrido Humano-IA</p>
-            <div class="footer-links">
-                <a href="#">LinkedIn</a>
-                <a href="#">Política de Privacidad</a>
-            </div>
-            <p class="footer-copy">© 2025 SOPHHIA Technologies. Todos los derechos reservados.</p>
-        </div>
+    <footer class="footer">
+        <div class="footer-brand">◈ SOPHHIA</div>
+        <p class="footer-tagline">Sistema Operativo de Prospectiva Híbrido Humano-IA</p>
+        <p class="footer-copy">© 2025 SOPHHIA. Todos los derechos reservados.</p>
     </footer>
 
 </body>

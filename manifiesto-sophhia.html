@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manifiesto SOPHHIA - Para quienes miran al futuro sin mapa</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Crimson+Pro:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0F172A;
+      --teal: #0D9488;
+      --cream: #FEFDFB;
+      --warm-gray: #78716C;
+      --soft-black: #1C1917;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    body {
+      font-family: 'Crimson Pro', Georgia, serif;
+      font-size: 1.25rem;
+      line-height: 1.9;
+      color: var(--soft-black);
+      background: var(--cream);
+    }
+    
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+    
+    /* Header */
+    header {
+      text-align: center;
+      padding: 6rem 2rem 4rem;
+      background: linear-gradient(180deg, var(--navy) 0%, #1E293B 100%);
+      color: white;
+    }
+    
+    header h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 3.5rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+    
+    header .subtitle {
+      font-family: 'Crimson Pro', Georgia, serif;
+      font-size: 1.5rem;
+      font-style: italic;
+      color: rgba(255,255,255,0.7);
+    }
+    
+    /* Sections */
+    section {
+      padding: 3rem 0;
+    }
+    
+    section.dark {
+      background: var(--navy);
+      color: white;
+    }
+    
+    section.teal {
+      background: linear-gradient(180deg, var(--teal) 0%, #0F766E 100%);
+      color: white;
+    }
+    
+    section.warm {
+      background: #F5F5F4;
+    }
+    
+    h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 2rem;
+      font-weight: 500;
+      margin-bottom: 2rem;
+      color: var(--teal);
+    }
+    
+    section.dark h2,
+    section.teal h2 {
+      color: white;
+    }
+    
+    h3 {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--teal);
+      margin-bottom: 1rem;
+    }
+    
+    section.dark h3,
+    section.teal h3 {
+      color: rgba(255,255,255,0.6);
+    }
+    
+    p {
+      margin-bottom: 1.5rem;
+    }
+    
+    p.lead {
+      font-size: 1.5rem;
+      line-height: 1.7;
+      color: var(--warm-gray);
+    }
+    
+    section.dark p.lead,
+    section.teal p.lead {
+      color: rgba(255,255,255,0.8);
+    }
+    
+    strong {
+      font-weight: 500;
+      color: var(--soft-black);
+    }
+    
+    section.dark strong,
+    section.teal strong {
+      color: white;
+    }
+    
+    em {
+      font-style: italic;
+    }
+    
+    /* Destacados */
+    .highlight {
+      font-size: 1.75rem;
+      line-height: 1.5;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-style: italic;
+      color: var(--teal);
+      margin: 2.5rem 0;
+      padding-left: 1.5rem;
+      border-left: 3px solid var(--teal);
+    }
+    
+    section.dark .highlight,
+    section.teal .highlight {
+      color: white;
+      border-left-color: rgba(255,255,255,0.5);
+    }
+    
+    /* Preguntas */
+    .questions {
+      margin: 2rem 0;
+      padding: 2rem;
+      background: rgba(13, 148, 136, 0.08);
+      border-radius: 8px;
+    }
+    
+    section.dark .questions {
+      background: rgba(255,255,255,0.05);
+    }
+    
+    .questions p {
+      font-style: italic;
+      margin-bottom: 0.75rem;
+      color: var(--warm-gray);
+    }
+    
+    section.dark .questions p {
+      color: rgba(255,255,255,0.7);
+    }
+    
+    .questions p:last-child {
+      margin-bottom: 0;
+    }
+    
+    /* Separador */
+    .separator {
+      text-align: center;
+      padding: 2rem 0;
+      font-size: 1.5rem;
+      color: var(--teal);
+      letter-spacing: 0.5em;
+    }
+    
+    section.dark .separator {
+      color: rgba(255,255,255,0.3);
+    }
+    
+    /* Perfiles */
+    .profile-intro {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.75rem;
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+    }
+    
+    /* Final CTA */
+    .cta-section {
+      text-align: center;
+      padding: 5rem 2rem;
+      background: var(--navy);
+      color: white;
+    }
+    
+    .cta-section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .cta-section p {
+      font-size: 1.25rem;
+      color: rgba(255,255,255,0.7);
+      max-width: 500px;
+      margin: 0 auto 2rem;
+    }
+    
+    .cta-button {
+      display: inline-block;
+      padding: 1rem 2.5rem;
+      background: var(--teal);
+      color: white;
+      text-decoration: none;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: 500;
+      border-radius: 50px;
+      transition: all 0.3s ease;
+    }
+    
+    .cta-button:hover {
+      background: #0F766E;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(13, 148, 136, 0.3);
+    }
+    
+    /* Quote final */
+    .final-quote {
+      text-align: center;
+      padding: 4rem 2rem;
+      background: var(--cream);
+    }
+    
+    .final-quote p {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.75rem;
+      font-style: italic;
+      color: var(--warm-gray);
+      margin-bottom: 1rem;
+    }
+    
+    .final-quote .author {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.875rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--teal);
+    }
+    
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 1rem 2rem;
+      background: rgba(15, 23, 42, 0.95);
+      backdrop-filter: blur(10px);
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    nav .logo {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: white;
+      text-decoration: none;
+    }
+    
+    nav .back {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    
+    nav .back:hover {
+      color: white;
+    }
+    
+    /* LA COLISIÓN FINAL - ESTILOS ESPECIALES */
+    section.collision {
+      background: linear-gradient(180deg, 
+        #0F172A 0%, 
+        #1E3A5F 20%,
+        #0D9488 50%,
+        #D97706 75%,
+        #FEF3C7 100%
+      );
+      color: white;
+      padding: 5rem 0;
+    }
+    
+    section.collision h2 {
+      color: white;
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+    
+    section.collision .collision-subtitle {
+      text-align: center;
+      font-style: italic;
+      font-size: 1.35rem;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 3rem;
+    }
+    
+    .collision-opening {
+      text-align: center;
+      margin: 3rem 0;
+    }
+    
+    .collision-opening p {
+      margin-bottom: 0.5rem;
+      font-size: 1.35rem;
+    }
+    
+    .collision-emphasis {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.5rem !important;
+      font-style: italic;
+      color: #FEF3C7;
+      margin: 2rem 0 !important;
+    }
+    
+    .collision-question {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.75rem;
+      font-style: italic;
+      text-align: center;
+      color: #FCD34D;
+      margin: 2.5rem 0;
+    }
+    
+    .collision-big {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 3rem;
+      font-weight: 600;
+      text-align: center;
+      color: white;
+      margin: 2rem 0;
+      text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+    
+    .collision-divider {
+      text-align: center;
+      font-size: 1.5rem;
+      color: #FCD34D;
+      margin: 3rem 0;
+      letter-spacing: 1em;
+    }
+    
+    .collision-revelation {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.75rem;
+      font-weight: 500;
+      text-align: center;
+      color: white;
+      margin: 2.5rem 0;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      padding: 1.5rem;
+      background: rgba(255,255,255,0.1);
+      border-radius: 8px;
+    }
+    
+    .collision-truth {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 2rem;
+      font-weight: 600;
+      text-align: center;
+      color: #FEF3C7;
+      margin: 3rem 0;
+      text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+    
+    .collision-final {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 2.25rem;
+      font-weight: 600;
+      text-align: center;
+      color: #1C1917;
+      margin: 3rem 0 1rem;
+      line-height: 1.4;
+    }
+    
+    section.collision p {
+      color: rgba(255,255,255,0.9);
+    }
+    
+    section.collision strong {
+      color: white;
+    }
+    
+    /* SECCIÓN LUMINOSA FINAL */
+    section.luminous {
+      background: linear-gradient(180deg,
+        #FEF3C7 0%,
+        #FFFBEB 30%,
+        #FFFFFF 100%
+      );
+      padding: 5rem 2rem;
+      text-align: center;
+    }
+    
+    .luminous-text {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 2rem;
+      color: #78716C;
+      margin-bottom: 0.5rem;
+    }
+    
+    .luminous-final {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: #0D9488;
+      margin-top: 1rem;
+      text-shadow: 0 2px 20px rgba(13, 148, 136, 0.2);
+    }
+    
+    /* Responsive */
+    @media (max-width: 640px) {
+      header h1 {
+        font-size: 2.5rem;
+      }
+      
+      header .subtitle {
+        font-size: 1.25rem;
+      }
+      
+      body {
+        font-size: 1.125rem;
+      }
+      
+      .highlight {
+        font-size: 1.35rem;
+      }
+      
+      .profile-intro {
+        font-size: 1.35rem;
+      }
+      
+      h2 {
+        font-size: 1.75rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="logo">SOPHHIA</a>
+    <a href="index.html" class="back">← Volver a inicio</a>
+  </nav>
+
+  <header>
+    <h1>Manifiesto</h1>
+    <p class="subtitle">Para quienes miran al futuro sin mapa</p>
+  </header>
+
+  <!-- INTRO -->
+  <section>
+    <div class="container">
+      <p class="lead"><strong>Tienes 17 años. O 45. O 70.</strong></p>
+      
+      <p>Da igual.</p>
+      
+      <p>Estás en un punto de tu vida donde necesitas decidir algo importante. Puede ser qué carrera estudiar. Puede ser si cambiar de trabajo. Puede ser cómo invertir los ahorros de toda una vida. O cómo preparar tu empresa para lo que viene.</p>
+      
+      <p>Y todo el mundo tiene una opinión.</p>
+      
+      <p>Tu madre dice que estudies algo "con salida". Tu tío dice que la inteligencia artificial va a quitarnos el trabajo a todos. Un influencer dice que el futuro es cripto. Otro dice que es la sostenibilidad. Un tercero dice que nadie sabe nada.</p>
+      
+      <p class="highlight">¿A quién creer?</p>
+    </div>
+  </section>
+
+  <!-- EL SECRETO -->
+  <section class="dark">
+    <div class="container">
+      <p class="lead">Aquí está el secreto que nadie te cuenta:</p>
+      
+      <p><strong>Nadie sabe qué va a pasar.</strong></p>
+      
+      <p>Ni los economistas con sus modelos. Ni los políticos con sus promesas. Ni las inteligencias artificiales con sus predicciones. Ni los gurús con sus certezas.</p>
+      
+      <p>El futuro no existe todavía. No está escrito en ningún sitio esperando a ser descubierto. Se construye cada día, con millones de decisiones de millones de personas.</p>
+      
+      <p>Entonces, ¿estamos perdidos?</p>
+      
+      <p><strong>No.</strong></p>
+    </div>
+  </section>
+
+  <!-- LA DIFERENCIA -->
+  <section>
+    <div class="container">
+      <p class="highlight">Hay una diferencia enorme entre adivinar el futuro y prepararse para él.</p>
+      
+      <p><strong>Adivinar</strong> es apostar todo a una carta. Es decir "estoy seguro de que esto va a pasar" y jugártela.</p>
+      
+      <p><strong>Prepararse</strong> es otra cosa. Es preguntarse: <em>¿Qué diferentes futuros podrían ocurrir? ¿Qué haría yo en cada uno? ¿Qué puedo hacer hoy que tenga sentido en varios de ellos?</em></p>
+      
+      <p>Un ejemplo sencillo:</p>
+      
+      <p>No sabes si va a llover mañana. Puedes apostar a que no llueve y salir sin paraguas. O puedes mirar el cielo, consultar el tiempo, y si hay dudas, llevarte un paraguas plegable. No has adivinado nada. Te has preparado.</p>
+      
+      <p>Ahora imagina hacer eso mismo con las decisiones importantes de tu vida. O de tu empresa. O de tu país.</p>
+      
+      <p><strong>Eso es lo que hace SOPHHIA.</strong></p>
+    </div>
+  </section>
+
+  <!-- QUÉ HACE -->
+  <section class="warm">
+    <div class="container">
+      <p>No te dice qué va a pasar. Te ayuda a pensar en qué <em>podría</em> pasar. Te enseña a construir varios futuros posibles — no uno, varios — y a preguntarte qué harías en cada uno.</p>
+      
+      <p>Y luego te ayuda a encontrar decisiones inteligentes. Decisiones que funcionan bien en varios escenarios, no solo en uno. Decisiones robustas.</p>
+      
+      <p>También te ayuda a estar atento. A identificar señales tempranas que te digan hacia qué futuro nos estamos moviendo. Para que no te pille por sorpresa.</p>
+    </div>
+  </section>
+
+  <!-- LA IA -->
+  <section class="teal">
+    <div class="container">
+      <h2>La inteligencia artificial</h2>
+      
+      <p>Seamos honestos: hay cosas que una máquina hace mejor que tú.</p>
+      
+      <p>Puede leer mil informes en un minuto. Puede cruzar datos de cien fuentes distintas. Puede calcular probabilidades, detectar patrones, simular escenarios. Puede recordar todo lo que se ha escrito sobre un tema y resumírtelo en tres párrafos.</p>
+      
+      <p>En eso, no hay competencia. La IA gana.</p>
+      
+      <p class="highlight">Pero hay algo que la IA no sabe. No sabe quién eres tú.</p>
+      
+      <p>No sabe qué te quita el sueño. No sabe qué te haría sentir orgulloso dentro de diez años. No sabe qué estarías dispuesto a sacrificar y qué no. No sabe cuál de tus miedos es real y cuál es solo ruido. No sabe qué significa "éxito" para ti, ni "fracaso", ni "una vida bien vivida".</p>
+      
+      <p>Y siendo sinceros: probablemente tú tampoco lo sabes del todo.</p>
+      
+      <p>Por eso SOPHHIA no empieza dándote respuestas. Empieza preguntándote.</p>
+      
+      <div class="questions">
+        <p>¿Qué te importa de verdad?</p>
+        <p>¿Qué estarías dispuesto a perder?</p>
+        <p>¿Qué futuro te daría miedo y cuál te daría paz?</p>
+      </div>
+      
+      <p>No con un test de personalidad. No con un algoritmo que te clasifica. Con preguntas reales, abiertas, sin respuesta correcta.</p>
+      
+      <p><strong>Porque solo cuando tú sabes qué buscas, la máquina puede ayudarte a encontrarlo.</strong></p>
+    </div>
+  </section>
+
+  <!-- PERFIL: ESTUDIANTE -->
+  <section>
+    <div class="container">
+      <h3>El estudiante</h3>
+      
+      <p class="profile-intro">Tienes 17 años y todo el mundo te pregunta qué vas a hacer con tu vida.</p>
+      
+      <p>Como si supieras. Como si alguien supiera.</p>
+      
+      <p>Te dicen que elijas bien porque de esto depende tu futuro. Pero nadie te enseña a elegir. Te dan listas de carreras, estadísticas de empleo, rankings de universidades. Datos. Muchos datos.</p>
+      
+      <p>Pero nadie te pregunta qué clase de vida quieres vivir.</p>
+      
+      <p>La IA puede decirte qué profesiones tienen más salida. Puede analizar tendencias del mercado laboral. Puede predecir qué sectores crecerán.</p>
+      
+      <p><strong>Pero no puede decirte si serás feliz haciendo eso.</strong></p>
+      
+      <p>No sabe si prefieres seguridad o aventura. Si te importa más el dinero o el tiempo libre. Si necesitas crear o prefieres organizar. Si te marchitas en una oficina o te pierdes sin estructura.</p>
+      
+      <p>SOPHHIA te ayuda a explorar futuros posibles. Tuyos. No de una estadística. Y a encontrar decisiones que tengan sentido en varios de ellos.</p>
+    </div>
+  </section>
+
+  <div class="separator">• • •</div>
+
+  <!-- PERFIL: EMPRENDEDOR -->
+  <section>
+    <div class="container">
+      <h3>El emprendedor</h3>
+      
+      <p class="profile-intro">Has tenido una idea. Has visto una oportunidad que otros no ven.</p>
+      
+      <p>Has registrado tu empresa, has dejado un trabajo seguro, has puesto tus ahorros en juego.</p>
+      
+      <p>Enhorabuena. Eso requiere coraje.</p>
+      
+      <p>Pero ahora estás solo. O casi. Y hay preguntas que te rondan por la noche:</p>
+      
+      <div class="questions">
+        <p>¿Y si el mercado no está preparado?</p>
+        <p>¿Y si aparece un competidor con más recursos?</p>
+        <p>¿Y si estoy viendo lo que quiero ver?</p>
+        <p>¿Qué pasa si funciona demasiado rápido y no puedo escalar?</p>
+        <p>¿Qué pasa si no funciona?</p>
+      </div>
+      
+      <p>Puedes preguntarle a ChatGPT. Te dará un análisis DAFO impecable, un estudio de mercado en segundos, una lista de riesgos ordenada por probabilidad.</p>
+      
+      <p><strong>Pero hay algo que la IA no puede hacer por ti.</strong></p>
+      
+      <p>No puede decirte si este proyecto es <em>tu</em> proyecto. No sabe cuánto estás dispuesto a aguantar antes de tirar la toalla. No sabe si lo que buscas es dinero, libertad, reconocimiento o demostrarle algo a alguien. No sabe cuál de tus socios te seguirá cuando las cosas se pongan feas y cuál desaparecerá.</p>
+      
+      <p>Por eso SOPHHIA no empieza con un plan de negocio. Empieza preguntándote.</p>
+      
+      <p><strong>Porque un emprendedor con claridad toma mejores decisiones que un emprendedor con mucha información y poca brújula.</strong></p>
+    </div>
+  </section>
+
+  <div class="separator">• • •</div>
+
+  <!-- PERFIL: CEO -->
+  <section>
+    <div class="container">
+      <h3>El directivo</h3>
+      
+      <p class="profile-intro">Llevas veinte años dirigiendo una empresa.</p>
+      
+      <p>Has visto crisis que los jóvenes solo conocen por Wikipedia. Has tomado decisiones que salvaron puestos de trabajo cuando todo el mundo te decía que cerraras. Has negociado con sindicatos, con bancos, con gobiernos. Has despedido a gente mirándole a los ojos. Has apostado por proyectos que parecían locos y resultaron ser visionarios.</p>
+      
+      <p>Tu experiencia es real. Está en tu cuerpo, no solo en tu cabeza.</p>
+      
+      <p>Pero ahora hay algo que te inquieta.</p>
+      
+      <p>Ves a gente joven de tu equipo que maneja la inteligencia artificial como si fuera una extensión de su cerebro. Producen informes en horas que antes llevaban semanas. Generan análisis, escenarios, presentaciones impecables. El Consejo de Administración empieza a mirarles con otros ojos.</p>
+      
+      <p>Y te preguntas, aunque no lo digas:</p>
+      
+      <div class="questions">
+        <p>¿Me estoy quedando atrás?</p>
+        <p>¿Puede esta máquina hacer lo que yo hago?</p>
+        <p>¿Cuánto tiempo antes de que alguien proponga que el joven brillante con su IA ocupe mi silla?</p>
+      </div>
+      
+      <p>Escucha bien esto:</p>
+      
+      <p><strong>La IA puede escribir un informe perfecto. Pero no sabe leer una sala.</strong></p>
+      
+      <p>No sabe que cuando el director financiero se calla, es porque está en desacuerdo pero no quiere decirlo delante de todos. No sabe que el cliente japonés necesita tres reuniones de cortesía antes de hablar de negocio. No sabe que aquel proveedor te salvó en 2008 y por eso le das un trato especial. No sabe que hay decisiones que son técnicamente correctas pero políticamente suicidas.</p>
+      
+      <p>Eso lo sabes tú. Lo has aprendido equivocándote, observando, escuchando, viviendo.</p>
+      
+      <p><strong>El problema no es la IA. El problema es no saber integrar lo que ella sabe con lo que sabes tú.</strong></p>
+      
+      <p>SOPHHIA no viene a sustituirte. Viene a darte un espacio donde tu experiencia y la potencia del cálculo se encuentran. Donde puedes pensar en voz alta, explorar escenarios, poner a prueba tus intuiciones.</p>
+      
+      <p>Y donde nadie va a usar tus dudas en tu contra.</p>
+      
+      <p>Porque dudar no es debilidad. Dudar es lo que hacen los líderes inteligentes antes de decidir.</p>
+    </div>
+  </section>
+
+  <div class="separator">• • •</div>
+
+  <!-- PERFIL: POLÍTICO -->
+  <section>
+    <div class="container">
+      <h3>El cargo público</h3>
+      
+      <p class="profile-intro">Acabas de llegar a un puesto de responsabilidad política.</p>
+      
+      <p>Puede ser un ayuntamiento. Una consejería autonómica. Un ministerio. Da igual el nivel: el problema es el mismo.</p>
+      
+      <p>Llegaste con ideas. Con proyectos que querías poner en marcha. Con la convicción de que podías mejorar las cosas.</p>
+      
+      <p>Pero la realidad te golpeó el primer día.</p>
+      
+      <p>Cada mañana te despiertas con una crisis nueva. Un titular que hay que desmentir. Una declaración de la oposición que exige respuesta. Un grupo de presión que amenaza con movilizaciones. Un medio que ha decidido que eres su objetivo.</p>
+      
+      <p>Y todo es urgente. Todo es para ayer.</p>
+      
+      <p class="highlight">¿Cuándo piensas en el largo plazo?</p>
+      
+      <p>Sabes que deberías. Sabes que las decisiones importantes —infraestructuras, educación, energía, demografía— tardan años en dar frutos. Sabes que lo que hagas hoy lo juzgarán dentro de una década.</p>
+      
+      <p>Pero hoy tienes que apagar tres fuegos. Y mañana habrá otros tres.</p>
+      
+      <p>La tentación es enorme: gobernar para el titular de mañana, no para el país de dentro de veinte años.</p>
+      
+      <p>Y aquí está lo que nadie dice en voz alta:</p>
+      
+      <p><strong>Los intereses de la opinión publicada y los intereses del país no siempre coinciden.</strong></p>
+      
+      <p>A veces la decisión correcta es impopular. A veces lo que los medios aplauden hoy será un desastre mañana. A veces hay que elegir entre ganar las próximas elecciones y hacer lo que hay que hacer.</p>
+      
+      <p>¿Cómo decides?</p>
+      
+      <p>La IA puede darte encuestas, análisis de sentimiento, predicciones de voto. Puede decirte qué es popular.</p>
+      
+      <p><strong>Pero no puede decirte qué es justo.</strong></p>
+      
+      <p>No sabe qué le debes a la gente que te votó. No sabe qué podrás mirar a la cara dentro de diez años. No sabe qué clase de país quieres dejar a los que vienen después.</p>
+      
+      <p>Eso lo sabes tú. O deberías saberlo.</p>
+      
+      <p>SOPHHIA no te da una respuesta fácil. Te ayuda a ver más allá del ruido. A construir escenarios de futuro que van más allá de la próxima encuesta. A encontrar decisiones que puedas defender no solo hoy, sino cuando ya no estés en el cargo.</p>
+      
+      <p><strong>Porque gobernar de verdad no es ganar cada batalla. Es saber cuáles merece la pena pelear.</strong></p>
+    </div>
+  </section>
+
+  <div class="separator">• • •</div>
+
+  <!-- PERFIL: ESCRITOR -->
+  <section>
+    <div class="container">
+      <h3>El creador</h3>
+      
+      <p class="profile-intro">Escribes. O pintas. O compones. O diseñas.</p>
+      
+      <p>No importa si es tu primera novela o la décima. El folio en blanco siempre da el mismo miedo.</p>
+      
+      <p>Tienes algo. Una imagen. Un fragmento de conversación que escuchaste en un bar. Alguien dijo algo —ni siquiera recuerdas qué exactamente— y de pronto estabas en otro sitio. Tenías ocho años. Había un olor. Una puerta que se cerraba. Una voz que no sabes si era real o inventada.</p>
+      
+      <p>Dos momentos que no tienen nada que ver. O quizás lo tienen todo.</p>
+      
+      <p class="highlight">¿Cómo se conectan?</p>
+      
+      <p>No lo sabes. Por eso escribes.</p>
+      
+      <p>Tienes un personaje. Bueno, tienes la sombra de un personaje. Sabes que es mujer, o crees que lo sabes. Sabes que arrastra algo que no ha contado a nadie. Pero no sabes qué siente. No encuentras la palabra.</p>
+      
+      <p><em>¿Es tristeza? No, tristeza no. Es algo más raro. Como nostalgia de algo que nunca ocurrió. Como culpa sin delito. Como el eco de un sueño que se olvida al despertar.</em></p>
+      
+      <p>La IA puede darte sinónimos. Puede sugerirte estructuras narrativas. Puede escribirte un párrafo impecable que suena a nada. Puede imitar a Carver, a Woolf, a García Márquez.</p>
+      
+      <p><strong>Pero no puede sentir lo que tú sentiste en aquel bar.</strong></p>
+      
+      <p>No sabe por qué ese recuerdo de infancia te ha perseguido treinta años. No sabe qué hay en esa conexión imposible entre dos momentos que solo existen dentro de tu cabeza. No sabe qué quieres decir de verdad, más allá de las palabras.</p>
+      
+      <p>Eso solo lo sabes tú. Y ni siquiera tú lo sabes todavía.</p>
+      
+      <p>Por eso escribes.</p>
+      
+      <p><strong>SOPHHIA no te escribe la novela.</strong></p>
+      
+      <p>Te hace preguntas que no te habías hecho. Te ayuda a colisionar ideas que parecían incompatibles. Te ofrece un espacio donde pensar en voz alta sin que nadie te juzgue, sin que nadie te diga cómo debería ser.</p>
+      
+      <p>Y a veces, en mitad de esa conversación, aparece la palabra que buscabas.</p>
+      
+      <p>No porque la máquina la haya encontrado.</p>
+      
+      <p>Porque tú la has encontrado, al fin.</p>
+      
+      <p class="highlight">La creatividad es anticipar un futuro que no existe: el de tu obra terminada. Tú eres el dueño de ese futuro. SOPHHIA solo te acompaña mientras lo construyes.</p>
+    </div>
+  </section>
+
+  <!-- SÍNTESIS -->
+  <section class="dark">
+    <div class="container">
+      <h2>Y así tantos otros</h2>
+      
+      <p><strong>Un estudiante que no sabe qué carrera elegir.</strong></p>
+      <p><strong>Un emprendedor que ha apostado todo a una idea.</strong></p>
+      <p><strong>Un directivo que siente el aliento de la nueva generación en su nuca.</strong></p>
+      <p><strong>Un político atrapado entre lo urgente y lo importante.</strong></p>
+      <p><strong>Un novelista frente al folio en blanco.</strong></p>
+      
+      <p>Cinco personas. Cinco mundos distintos. Cinco problemas que no se parecen en nada.</p>
+      
+      <p>¿O sí?</p>
+      
+      <div class="separator">• • •</div>
+      
+      <p>Mira de nuevo.</p>
+      
+      <p>Todos tienen <strong>un futuro que no existe todavía</strong> y que depende de lo que hagan hoy.</p>
+      
+      <p>Todos tienen <strong>información incompleta</strong> y decisiones que no pueden esperar.</p>
+      
+      <p>Todos tienen <strong>algo que la máquina no sabe</strong>: quiénes son, qué les importa, qué están dispuestos a perder.</p>
+      
+      <p>Y todos tienen <strong>miedo de equivocarse</strong>. Aunque no lo digan.</p>
+    </div>
+  </section>
+
+  <!-- QUÉ ES SOPHHIA -->
+  <section class="teal">
+    <div class="container">
+      <h2>Qué es SOPHHIA</h2>
+      
+      <p class="lead">SOPHHIA nace de una idea simple:</p>
+      
+      <p><strong>El futuro no se adivina. Se prepara.</strong></p>
+      
+      <p>Y prepararse no es solo calcular escenarios. Es conocerse. Es saber qué buscas antes de preguntar cómo conseguirlo.</p>
+      
+      <p><strong>Por eso SOPHHIA tiene dos hemisferios.</strong></p>
+      
+      <p>Uno <strong>calcula</strong>. Analiza variables, cruza datos, simula escenarios, mide fuerzas. Hace lo que las máquinas hacen mejor que nosotros.</p>
+      
+      <p>El otro <strong>escucha</strong>. Pregunta. Busca lo que no está en los datos: tus valores, tus miedos, tus intuiciones. Hace lo que solo los humanos pueden hacer.</p>
+      
+      <p>Y entre los dos, construye algo que ninguno podría construir solo:</p>
+      
+      <p class="highlight">Decisiones que tienen sentido. No solo lógica. Sentido.</p>
+      
+      <p>Decisiones que puedes defender ante otros y ante ti mismo. Que funcionan en varios futuros posibles, no solo en el que deseas. Que honran tanto lo que sabes como lo que eres.</p>
+    </div>
+  </section>
+
+  <!-- CIERRE -->
+  <section>
+    <div class="container">
+      <p class="lead"><strong>¿Qué es SOPHHIA?</strong></p>
+      
+      <p>Es un sistema de prospectiva. Sí.</p>
+      
+      <p>Es inteligencia artificial combinada con métodos matemáticos. También.</p>
+      
+      <p>Pero en el fondo, SOPHHIA es una pregunta:</p>
+      
+      <p class="highlight">¿Qué harías si supieras que no puedes conocer el futuro, pero sí puedes prepararte para varios?</p>
+      
+      <p>Y es una invitación:</p>
+      
+      <p class="highlight">Ven. Pensemos juntos.</p>
+      
+      <p>No tenemos todas las respuestas.</p>
+      
+      <p>Pero sabemos hacer las preguntas correctas.</p>
+      
+      <p>Y a veces, eso es suficiente para cambiar todo.</p>
+    </div>
+  </section>
+
+  <!-- REFLEXIÓN FINAL -->
+  <section class="warm">
+    <div class="container">
+      <h2>Una última pregunta</h2>
+      
+      <p class="lead">¿Qué pasaría si todos tuviéramos una SOPHHIA?</p>
+      
+      <p>No dentro de cien años. Quizás dentro de diez. Quizás antes.</p>
+      
+      <p>Un asistente que nos ayuda a anticipar. Conectado. Siempre disponible. Que conoce nuestros valores, nuestros miedos, nuestras decisiones pasadas. Que calcula escenarios y nos pregunta qué queremos de verdad.</p>
+      
+      <p>¿Pensaríamos todos igual?</p>
+      
+      <p><strong>No.</strong></p>
+      
+      <p>Porque SOPHHIA no dice qué pensar. Pregunta qué te importa a ti. Y eso es diferente para cada persona.</p>
+      
+      <p>Un mundo donde todos anticipan mejor no es un mundo donde todos deciden lo mismo. Es un mundo donde cada uno decide mejor <em>según sus propios valores</em>.</p>
+      
+      <p class="highlight">Pero hay paradojas.</p>
+      
+      <p>Si todos anticipamos el mismo futuro, ¿lo creamos o lo evitamos? Las profecías se autocumplen o se autodestruyen.</p>
+      
+      <p>Si mi SOPHHIA sabe que tú tienes SOPHHIA, y ambas anticipan... entramos en un juego de espejos. Yo anticipo que tú anticipas que yo anticipo. Como en ajedrez, pero infinito.</p>
+      
+      <p>Y la pregunta más incómoda: ¿quién controla las SOPHHIAs? Si hay una versión con más datos para quien pueda pagarla, ¿se amplía la desigualdad o se reduce?</p>
+      
+      <div class="separator">• • •</div>
+      
+      <p>Nuestra intuición:</p>
+      
+      <p>Un mundo con SOPHHIAs generalizadas sería <strong>más resiliente</strong> pero <strong>no más predecible</strong>.</p>
+      
+      <p>Porque si todos nos preparamos para varios futuros en vez de apostar por uno, el sistema global absorbe mejor los shocks. Pero la complejidad de millones de agentes anticipando crea su propia incertidumbre.</p>
+      
+      <p>Es como el tráfico: si todos tienen GPS, ¿fluye mejor o se colapsan las rutas alternativas?</p>
+      
+      <p class="highlight">Quizás la pregunta no es "¿qué pasa si todos tienen SOPHHIA?" sino "¿qué clase de SOPHHIA queremos que todos tengan?"</p>
+      
+      <p>Una que optimice solo para el individuo, o una que incluya el bien común en sus cálculos.</p>
+      
+      <p>Eso no es solo computable. Es <em>político</em>.</p>
+      
+      <p>Y por tanto, es una decisión que debemos tomar juntos. Anticipándola.</p>
+      
+      <p><strong>SOPHHIA, aplicada a sí misma.</strong></p>
+    </div>
+  </section>
+
+  <!-- LA COLISIÓN FINAL - EL CLÍMAX -->
+  <section class="collision">
+    <div class="container">
+      <h2>La Colisión Final</h2>
+      <p class="collision-subtitle">Donde las matemáticas se encuentran con el sentido de vivir</p>
+      
+      <div class="collision-opening">
+        <p>Tienes una tarta y dos hermanos.</p>
+        <p>Tienes dos empresas y un mercado.</p>
+        <p>Tienes mil futuros y una vida.</p>
+        <p class="collision-emphasis">El mismo problema. Diferente escala.</p>
+      </div>
+      
+      <p><strong>Pareto</strong> te dice que hay repartos donde ya no puedes mejorar nada sin empeorar algo. <strong>Nash</strong> te dice que a veces todos pierden aunque nadie quiera. <strong>Monte Carlo</strong> te dice que puedes lanzar los dados mil veces para ver qué podría pasar. <strong>Markov</strong> te dice que el futuro se construye paso a paso desde donde estás. <strong>La teoría de juegos</strong> te dice que tu decisión depende de lo que hagan los demás.</p>
+      
+      <p>Cinco formas de mirar la incertidumbre.</p>
+      <p>Cinco herramientas que una máquina puede calcular en segundos.</p>
+      
+      <p class="collision-question">¿Y entonces?</p>
+      
+      <p>Entonces llega la pregunta que ninguna de ellas puede responder:</p>
+      
+      <p class="collision-big">¿Para qué?</p>
+      
+      <p>Para qué optimizar si no sabes qué quieres.<br>
+      Para qué anticipar si no sabes para qué vives.<br>
+      Para qué calcular mil futuros si no sabes cuál te importa.</p>
+      
+      <div class="collision-divider">✦</div>
+      
+      <p class="collision-emphasis">Imagina que pudieras vivir eternamente.</p>
+      
+      <p>No es tan difícil de imaginar. La tecnología avanza. Hay quien trabaja en ello. Quizás nuestros nietos tengan que elegir.</p>
+      
+      <p class="collision-question">¿Para qué anticipar si tienes todo el tiempo del mundo?</p>
+      
+      <p>Si puedes equivocarte infinitas veces, ¿qué importa una mala decisión?<br>
+      Si puedes probar todos los caminos, ¿qué importa elegir bien?<br>
+      Si no hay final, ¿qué importa el principio?</p>
+      
+      <div class="collision-divider">✦</div>
+      
+      <p>Aquí está la colisión.</p>
+      
+      <p class="collision-revelation">La anticipación tiene sentido porque el tiempo se acaba.</p>
+      
+      <p>Pareto importa porque no puedes tenerlo todo.<br>
+      Nash importa porque los demás también deciden.<br>
+      Monte Carlo importa porque no puedes vivir mil vidas para ver cuál sale mejor.<br>
+      Markov importa porque cada paso cierra puertas y abre otras.<br>
+      La teoría de juegos importa porque no estás solo en el tablero.</p>
+      
+      <p class="collision-truth">Y todo eso importa porque vas a morir.</p>
+      
+      <div class="collision-divider">✦</div>
+      
+      <p>No es triste. Es lo contrario de triste.</p>
+      
+      <p>Es lo que da peso a cada decisión.<br>
+      Es lo que hace que elegir sea sagrado.<br>
+      Es lo que convierte una vida en una historia y no en un ruido infinito.</p>
+      
+      <p class="collision-revelation">La finitud no es el enemigo. Es el maestro.</p>
+      
+      <div class="collision-divider">✦</div>
+      
+      <p>La IA puede calcular óptimos de Pareto para mil variables en un segundo.<br>
+      Puede encontrar equilibrios de Nash en juegos de cien jugadores.<br>
+      Puede simular un millón de futuros antes de que termines de leer esta frase.<br>
+      Puede modelar cadenas de Markov con millones de estados.</p>
+      
+      <p class="collision-emphasis">Pero no sabe que va a morir.</p>
+      
+      <p>No siente la urgencia.<br>
+      No siente el peso.<br>
+      No siente el vértigo de elegir cuando no puedes volver atrás.</p>
+      
+      <p><strong>Tú sí.</strong></p>
+      
+      <div class="collision-divider">✦</div>
+      
+      <p>Y aquí está el secreto que nadie te cuenta sobre las matemáticas de la incertidumbre:</p>
+      
+      <p class="collision-revelation">No sirven para eliminar la incertidumbre. Sirven para honrarla.</p>
+      
+      <p>Pareto no te dice qué elegir. Te muestra el precio de cada elección.<br>
+      Nash no te saca de la trampa. Te enseña que estás en una.<br>
+      Monte Carlo no predice el futuro. Te muestra que hay muchos.<br>
+      Markov no te dice a dónde ir. Te muestra desde dónde partes.<br>
+      La teoría de juegos no te hace ganar. Te enseña que ganar depende de cómo definas el juego.</p>
+      
+      <p class="collision-emphasis">Son espejos, no mapas.</p>
+      
+      <div class="collision-divider">✦</div>
+      
+      <p>SOPHHIA no es una máquina que decide por ti.</p>
+      
+      <p>Es un espacio donde el cálculo y el sentido se encuentran.</p>
+      
+      <p>Donde puedes ver los mil futuros posibles <strong>y</strong> preguntarte cuál merece tu tiempo.<br>
+      Donde puedes calcular el óptimo de Pareto <strong>y</strong> decidir qué estás dispuesto a perder.<br>
+      Donde puedes entender el equilibrio de Nash <strong>y</strong> buscar cómo romperlo.<br>
+      Donde puedes simular cadenas de Markov <strong>y</strong> elegir en qué estado quieres estar cuando todo termine.</p>
+      
+      <div class="collision-divider">✦</div>
+      
+      <p class="collision-question">¿Para qué vivir eternamente?</p>
+      
+      <p>Quizás la pregunta está mal planteada.</p>
+      
+      <p>No se trata de cuánto vives. Se trata de cómo.</p>
+      
+      <p>Un siglo vivido sin elegir es más corto que un año vivido con propósito.<br>
+      Una eternidad sin sentido es más vacía que una tarde con alguien que amas.</p>
+      
+      <p class="collision-revelation">El tiempo no se mide en duración. Se mide en decisiones que importan.</p>
+      
+      <div class="collision-divider">✦</div>
+      
+      <p>Y si eso es cierto, entonces SOPHHIA no es una herramienta para vivir más.</p>
+      
+      <p class="collision-emphasis">Es una herramienta para vivir mejor.</p>
+      
+      <p>Para que el tiempo que tengas —sea el que sea— lo uses eligiendo bien.<br>
+      Para que cuando mires atrás, puedas decir: <em>"No acerté siempre. Pero elegí con los ojos abiertos."</em></p>
+      
+      <div class="collision-divider">✦</div>
+      
+      <p>Las matemáticas te dan claridad.<br>
+      La IA te da potencia.<br>
+      <strong>Pero el sentido lo pones tú.</strong></p>
+      
+      <p class="collision-final">Esa es la colisión.<br>Eso es SOPHHIA.</p>
+    </div>
+  </section>
+
+  <!-- CIERRE LUMINOSO -->
+  <section class="luminous">
+    <div class="container">
+      <p class="luminous-text">Anticípate.</p>
+      <p class="luminous-text">No para vivir eternamente.</p>
+      <p class="luminous-final">Para vivir de verdad el tiempo que te queda.</p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <h2>Esto es SOPHHIA.</h2>
+    <p>Descarga las herramientas gratuitas y empieza a explorar tu futuro.</p>
+    <a href="index.html#descarga" class="cta-button">Descargar Base Cero</a>
+  </section>
+
+  <!-- QUOTE FINAL -->
+  <div class="final-quote">
+    <p>"Anticiparse no es adivinar. Es calcular, comprender y resonar."</p>
+    <span class="author">SOPHHIA</span>
+  </div>
+
+</body>
+</html>
